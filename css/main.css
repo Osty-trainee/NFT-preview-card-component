@@ -1,0 +1,199 @@
+@font-face {
+  font-family: "Outfit";
+  src: url("../fonts/Outfit-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Outfit";
+  src: url("../fonts/Outfit-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --white: hsl(0, 100%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --blue-950: hsl(217, 54%, 11%);
+  --blue-900: hsl(216, 50%, 16%);
+  --blue-800: hsl(215, 32%, 27%);
+  --blue-500: hsl(215, 51%, 70%);
+  --cyan-400: hsl(178, 100%, 50%);
+  --spacing-300: 1.5rem;
+  --spacing-200: 1rem;
+  --spacing-100: 0.5rem;
+  --font-main: 'Outfit', sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--blue-950);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-300);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.attribution {
+  width: 100%;
+  margin-top: var(--spacing-300);
+  text-align: center;
+  font-size: 0.6875rem;
+  color: var(--white);
+}
+.attribution a {
+  color: var(--cyan-400);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 600;
+}
+.attribution a:hover {
+  text-decoration: underline;
+}
+
+.card {
+  background-color: var(--blue-900);
+  max-width: 21.875rem;
+  width: 100%;
+  padding: var(--spacing-300);
+  border-radius: 0.9375rem;
+  box-shadow: 0 25px 50px -12px hsla(0, 0%, 0%, 0.953);
+}
+.card .image-container {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: var(--spacing-100);
+  overflow: hidden;
+  cursor: pointer;
+  background-color: var(--cyan-400);
+  transition: outline 0.2s ease;
+}
+.card .image-container .main-image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+.card .image-container .main-image:hover {
+  opacity: 0.5;
+}
+.card .image-container .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(178, 100%, 50%, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.card .image-container .overlay:hover, .card .image-container .overlay:focus-visible {
+  opacity: 1;
+}
+.card .image-container .overlay:focus-visible {
+  outline: 2px dashed var(--cyan-400);
+  outline-offset: 2px;
+}
+.card .title {
+  margin-bottom: var(--spacing-200);
+  margin-top: var(--spacing-300);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.card .title .link {
+  color: var(--white);
+  font-size: 1.375rem;
+  line-height: 1.25;
+  font-weight: 600;
+  text-decoration: none;
+}
+.card .title .link:hover, .card .title .link:focus-visible {
+  color: var(--cyan-400);
+}
+.card .title .link:focus-visible {
+  outline: 2px dashed var(--cyan-400);
+  outline-offset: 4px;
+}
+.card .description {
+  color: var(--blue-500);
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 1.45;
+  margin-bottom: var(--spacing-300);
+}
+.card .info-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: var(--spacing-300);
+  border-bottom: 1px solid var(--blue-800);
+  margin-bottom: var(--spacing-300);
+}
+.card .info-status .price, .card .info-status .time {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-100);
+  font-size: var(--spacing-200);
+  line-height: 1.25;
+}
+.card .info-status .price {
+  color: var(--cyan-400);
+  font-weight: 600;
+}
+.card .info-status .time {
+  color: var(--blue-500);
+  font-weight: 300;
+}
+.card .creator {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-200);
+}
+.card .creator .avatar {
+  width: 2.0625rem;
+  height: 2.0625rem;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+}
+.card .creator .creator-text {
+  color: var(--blue-500);
+  font-size: var(--spacing-200);
+  font-weight: 300;
+}
+.card .creator .creator-text .creator-name {
+  color: var(--white);
+  font-weight: 300;
+  font-size: var(--spacing-200);
+  cursor: pointer;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+.card .creator .creator-text .creator-name:hover, .card .creator .creator-text .creator-name:focus-visible {
+  color: var(--cyan-400);
+}
+.card .creator .creator-text .creator-name:focus-visible {
+  outline: 2px dashed var(--cyan-400);
+  outline-offset: 4px;
+}/*# sourceMappingURL=main.css.map */
